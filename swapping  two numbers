@@ -1,0 +1,14 @@
+def swap_values(val1, val2):
+    temp = val1
+    val1 = val2
+    val2 = temp
+    return val1, val2
+value1 = 10
+value2 = 20
+print("Before swapping:")
+print("Value 1:", value1)
+print("Value 2:", value2)
+value1, value2 = swap_values(value1, value2)
+print("\nAfter swapping:")
+print("Value 1:", value1)
+print("Value 2:", value2)
