@@ -1,0 +1,6 @@
+list1 = [1, 2, 3, 4, 5]
+tuple1 = tuple(list1)
+print("Tuple created from list:", tuple1)
+tuple2 = (5, 4, 3, 2, 1)
+list2 = list(tuple2)
+print("List created from tuple:", list2)
