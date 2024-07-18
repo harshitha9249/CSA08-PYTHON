@@ -1,0 +1,40 @@
+def are_isomorphic(s, t):
+    # If lengths of the strings are not equal, they cannot be isomorphic
+    if len(s) != len(t):
+        return False
+    
+    # Dictionaries to keep the character mappings
+    s_to_t_mapping = {}
+    t_to_s_mapping = {}
+    
+    # Iterate through characters of both strings
+    for s_char, t_char in zip(s, t):
+        # Check the mapping from s to t
+        if s_char in s_to_t_mapping:
+            if s_to_t_mapping[s_char] != t_char:
+                return False
+        else:
+            s_to_t_mapping[s_char] = t_char
+        
+        # Check the mapping from t to s
+        if t_char in t_to_s_mapping:
+            if t_to_s_mapping[t_char] != s_char:
+                return False
+        else:
+            t_to_s_mapping[t_char] = s_char
+    
+    # If no conflicts found, strings are isomorphic
+    return True
+
+# Example usage:
+s = "egg"
+t = "add"
+print("Are the strings isomorphic?", are_isomorphic(s, t))  # Output: True
+
+s = "foo"
+t = "bar"
+print("Are the strings isomorphic?", are_isomorphic(s, t))  # Output: False
+
+s = "paper"
+t = "title"
+print("Are the strings isomorphic?", are_isomorphic(s, t))  # Output: True
