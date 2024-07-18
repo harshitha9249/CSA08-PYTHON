@@ -1,0 +1,25 @@
+def remove_common_words(s1, s2):
+    # Split sentences into words
+    words_s1 = s1.split()
+    words_s2 = s2.split()
+    
+    # Find common words
+    common_words = set(words_s1) & set(words_s2)
+    
+    # Remove common words from both sentences
+    filtered_s1 = [word for word in words_s1 if word not in common_words]
+    filtered_s2 = [word for word in words_s2 if word not in common_words]
+    
+    # Join words to form new sentences
+    new_s1 = ' '.join(filtered_s1)
+    new_s2 = ' '.join(filtered_s2)
+    
+    return new_s1, new_s2
+
+# Example usage:
+s1 = "This is a sample sentence"
+s2 = "This sentence is just a sample"
+
+new_s1, new_s2 = remove_common_words(s1, s2)
+print("Sentence 1 after removing common words:", new_s1)
+print("Sentence 2 after removing common words:", new_s2)
