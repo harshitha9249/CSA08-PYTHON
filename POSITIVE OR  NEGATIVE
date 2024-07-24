@@ -1,0 +1,16 @@
+def check_positive_negative(number):
+    # Check if the number is positive, negative, or zero
+    if number > 0:
+        return "Positive"
+    elif number < 0:
+        return "Negative"
+    else:
+        return "Zero"
+
+# Input from the user
+try:
+    num = float(input("Enter a number: "))  # Using float to handle both integers and decimals
+    result = check_positive_negative(num)
+    print(f"The number {num} is {result}.")
+except ValueError:
+    print("Invalid input! Please enter a valid number.")
