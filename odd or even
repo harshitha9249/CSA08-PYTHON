@@ -1,0 +1,14 @@
+def check_odd_even(number):
+    # Check if the number is divisible by 2
+    if number % 2 == 0:
+        return "Even"
+    else:
+        return "Odd"
+
+# Input from the user
+try:
+    num = int(input("Enter a number: "))
+    result = check_odd_even(num)
+    print(f"The number {num} is {result}.")
+except ValueError:
+    print("Invalid input! Please enter a valid integer.")
