@@ -1,0 +1,56 @@
+def print_list(lst):
+    print(f"List: {lst}")
+
+def add_element(lst, element):
+    lst.append(element)
+    print(f"Added {element}: {lst}")
+
+def remove_element(lst, element):
+    if element in lst:
+        lst.remove(element)
+        print(f"Removed {element}: {lst}")
+    else:
+        print(f"Element {element} not found in the list")
+
+def concatenate_lists(lst1, lst2):
+    concatenated = lst1 + lst2
+    print(f"Concatenated List: {concatenated}")
+    return concatenated
+
+def slice_list(lst, start, end):
+    sliced = lst[start:end]
+    print(f"Sliced List [{start}:{end}]: {sliced}")
+    return sliced
+
+def list_length(lst):
+    length = len(lst)
+    print(f"Length of the List: {length}")
+    return length
+
+def main():
+    list1 = [1, 2, 3, 4, 5]
+    list2 = [6, 7, 8, 9, 10]
+    
+    print("Initial Lists:")
+    print_list(list1)
+    print_list(list2)
+
+    print("\nAdding Elements:")
+    add_element(list1, 6)
+    add_element(list2, 11)
+
+    print("\nRemoving Elements:")
+    remove_element(list1, 3)
+    remove_element(list2, 11)
+
+    print("\nConcatenating Lists:")
+    concatenated_list = concatenate_lists(list1, list2)
+
+    print("\nSlicing List:")
+    sliced_list = slice_list(concatenated_list, 2, 7)
+
+    print("\nFinding Length of the List:")
+    list_length(concatenated_list)
+
+if __name__ == "__main__":
+    main()
