@@ -1,0 +1,30 @@
+def remove_vowels(input_string):
+    """
+    Remove all vowels from the input string and return the modified string.
+    
+    Parameters:
+    input_string (str): The string from which vowels will be removed.
+
+    Returns:
+    str: The string with vowels removed.
+    """
+    # Define the vowels
+    vowels = "aeiouAEIOU"
+    
+    # Create a new string with vowels removed
+    no_vowels_string = ''.join(char for char in input_string if char not in vowels)
+    
+    return no_vowels_string
+
+def main():
+    # Take input string from user
+    user_input = input("Enter a string: ")
+    
+    # Remove vowels from the input string
+    result = remove_vowels(user_input)
+    
+    # Display the string after removing vowels
+    print("String after removing vowels:", result)
+
+if __name__ == "__main__":
+    main()
