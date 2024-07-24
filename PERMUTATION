@@ -1,0 +1,26 @@
+from itertools import permutations
+
+def find_permutations(number):
+    # Convert the number to a string to iterate over digits
+    number_str = str(number)
+    
+    # Generate all permutations of the digits
+    perm = permutations(number_str)
+    
+    # Convert permutations to a set to avoid duplicates and print them
+    unique_permutations = set([''.join(p) for p in perm])
+    
+    return unique_permutations
+
+# Input from the user
+try:
+    number = int(input("Enter a number: "))
+    # Find all permutations
+    all_permutations = find_permutations(number)
+    
+    print(f"All unique permutations of the number {number} are:")
+    for perm in sorted(all_permutations):
+        print(perm)
+
+except ValueError:
+    print("Invalid input! Please enter a valid integer.")
