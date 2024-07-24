@@ -1,0 +1,27 @@
+def factorial(n):
+    """Calculate factorial of n iteratively."""
+    result = 1
+    for i in range(1, n + 1):
+        result *= i
+    return result
+
+def sum_of_factorials(n):
+    """Calculate the sum of factorials from 1! to n!."""
+    total = 0
+    for i in range(1, n + 1):
+        total += factorial(i)
+    return total
+
+# Input from the user
+try:
+    number = int(input("Enter a positive integer: "))
+    
+    if number < 1:
+        print("Please enter a positive integer.")
+    else:
+        # Calculate the sum of factorials
+        result = sum_of_factorials(number)
+        print(f"The sum of factorials from 1! to {number}! is {result}")
+
+except ValueError:
+    print("Invalid input! Please enter a valid integer.")
