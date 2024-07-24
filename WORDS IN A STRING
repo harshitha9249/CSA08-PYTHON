@@ -1,0 +1,18 @@
+def count_words(string):
+    """
+    This function counts the number of words in the given string.
+    """
+    # Split the string into words
+    words = string.split()
+    
+    # Return the number of words
+    return len(words)
+
+# Input string from the user
+input_string = input("Enter a string: ")
+
+# Count the number of words in the input string
+word_count = count_words(input_string)
+
+# Display the number of words
+print(f"The number of words in the string is: {word_count}")
