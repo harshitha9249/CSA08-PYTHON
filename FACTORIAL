@@ -1,0 +1,23 @@
+def factorial_iterative(n):
+    # Initialize result to 1
+    result = 1
+    
+    # Compute factorial iteratively
+    for i in range(1, n + 1):
+        result *= i
+    
+    return result
+
+# Input from the user
+try:
+    number = int(input("Enter a positive integer: "))
+    
+    if number < 0:
+        print("Factorial is not defined for negative numbers.")
+    else:
+        # Calculate factorial using iterative approach
+        fact = factorial_iterative(number)
+        print(f"The factorial of {number} is {fact}")
+
+except ValueError:
+    print("Invalid input! Please enter a valid integer.")
