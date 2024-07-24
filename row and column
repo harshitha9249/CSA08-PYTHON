@@ -1,0 +1,68 @@
+def sum_diagonals(matrix):
+    """Calculate the sum of primary and secondary diagonals of a square matrix."""
+    n = len(matrix)
+    primary_diagonal_sum = 0
+    secondary_diagonal_sum = 0
+
+    for i in range(n):
+        primary_diagonal_sum += matrix[i][i]
+        secondary_diagonal_sum += matrix[i][n - 1 - i]
+
+    return primary_diagonal_sum, secondary_diagonal_sum
+
+def sum_rows(matrix):
+    """Calculate the sum of each row of the matrix."""
+    row_sums = [sum(row) for row in matrix]
+    return row_sums
+
+def sum_columns(matrix):
+    """Calculate the sum of each column of the matrix."""
+    n = len(matrix)
+    col_sums = [0] * n
+
+    for i in range(n):
+        for j in range(n):
+            col_sums[j] += matrix[i][j]
+
+    return col_sums
+
+def main():
+    # Input matrix from the user
+    try:
+        n = int(input("Enter the number of rows/columns for the square matrix: "))
+
+        if n <= 0:
+            print("Number of rows/columns must be positive.")
+            return
+
+        matrix = []
+        print("Enter the elements of the matrix row by row:")
+        for i in range(n):
+            row = list(map(int, input(f"Enter row {i + 1}: ").split()))
+            if len(row) != n:
+                print("Invalid input! The number of elements in each row must be equal to the number of rows/columns.")
+                return
+            matrix.append(row)
+
+        # Calculate sums
+        primary_diagonal_sum, secondary_diagonal_sum = sum_diagonals(matrix)
+        row_sums = sum_rows(matrix)
+        col_sums = sum_columns(matrix)
+
+        # Display results
+        print(f"Sum of primary diagonal: {primary_diagonal_sum}")
+        print(f"Sum of secondary diagonal: {secondary_diagonal_sum}")
+
+        print("Sum of each row:")
+        for i, row_sum in enumerate(row_sums):
+            print(f"Row {i + 1}: {row_sum}")
+
+        print("Sum of each column:")
+        for i, col_sum in enumerate(col_sums):
+            print(f"Column {i + 1}: {col_sum}")
+
+    except ValueError:
+        print("Invalid input! Please enter integers only.")
+
+if __name__ == "__main__":
+    main()
